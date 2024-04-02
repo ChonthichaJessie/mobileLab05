@@ -1,11 +1,14 @@
 import MainLayout from '../layouts/MainLayout';
 import React from 'react';
-import { Text } from 'react-native';
+import {Button} from 'react-native';
 
-const AboutScreen = () => {
+const AboutScreen = ({navigation}) => {
     return (
         <MainLayout>
-            <Text style={{ fontSize: 24 }}>About Screen</Text>
+            <Button
+        title="Go to content"
+        onPress={() => navigation.navigate('Content')}
+      />
         </MainLayout>
     );
 }

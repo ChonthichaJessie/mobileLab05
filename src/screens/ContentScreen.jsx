@@ -1,16 +1,13 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-// import {SafeAreaView} from 'react-native';
-// import ToDoList from './components/ToDoList';
-// import ToDoForm from './components/ToDoForm';
+import {ImageBackground, SafeAreaView} from 'react-native';
+import ToDoList from '../components/ToDoList';
+import ToDoForm from '../components/ToDoForm';
 import styled from 'styled-components/native';
 import {useState} from 'react';
-import HomeScreen from './screens/HomeScreen';
-import AboutScreen from './screens/AboutScreen';
-import ContentScreen from './screens/ContentScreen';
+import MainLayout from '../layouts/MainLayout';
 
-const App = () => {
+const ContentScreen = () => {
   const [tasks, setTasks] = useState(['Do laundry', 'Go to gym', 'Walk dog']);
   const Stack = createNativeStackNavigator();
 
@@ -21,8 +18,8 @@ const App = () => {
   };
 
   return (
-    <NavigationContainer>
-      {/* <Wrapper>
+    <MainLayout>
+      <Wrapper>
         <SafeAreaView>
           <ToDoList tasks={tasks} />
           <ToDoForm addTask={handleAddTask} />
@@ -32,16 +29,11 @@ const App = () => {
             })}
           </TasksList>
         </SafeAreaView>
-      </Wrapper> */}
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="About" component={AboutScreen} />
-        <Stack.Screen name="Content" component={ContentScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+      </Wrapper>
+    </MainLayout>
   );
 };
-export default App;
+export default ContentScreen;
 
 const TasksList = styled.View`
   justify-content: center;
