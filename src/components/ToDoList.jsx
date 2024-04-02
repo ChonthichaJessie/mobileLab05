@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { TextInput, StyleSheet, Button, Pressable, View, Text, ScrollView } from "react-native";
+import React from "react";
+import { Pressable, View, Text, ScrollView } from "react-native";
 
 const ToDoList = ({tasks}) => {
     return(

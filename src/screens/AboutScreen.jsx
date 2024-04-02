@@ -5,7 +5,7 @@ import { Text } from 'react-native';
 const AboutScreen = () => {
     return (
         <MainLayout>
-            <Text>About Screen</Text>
+            <Text style={{ fontSize: 24 }}>About Screen</Text>
         </MainLayout>
     );
 }

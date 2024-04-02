@@ -1,8 +1,6 @@
+import {Text} from 'react-native';
+
 const Footer = () => {
-    return (
-        <footer>
-        <p>Author: Jessie Chonthicha</p>
-        </footer>
-    );
-}
+  return <Text>Author: Jessie Chonthicha</Text>;
+};
 export default Footer;

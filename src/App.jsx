@@ -17,28 +17,28 @@ const App = () => {
     tasks.map(item => item.toLowerCase()).indexOf(task.toLowerCase()) > 0
       ? setTasks(tasks)
       : setTasks([...tasks, task]);
-  }
+  };
 
-    return (
-      <div>
+  return (
+    <NavigationContainer>
+      <Wrapper>
         <SafeAreaView>
           <ToDoList tasks={tasks} />
           <ToDoForm addTask={handleAddTask} />
           <TasksList>
             {tasks.map(task => {
-              return <TextContent>{task}</TextContent>;
+              return <TextContent >{task}</TextContent>;
             })}
           </TasksList>
         </SafeAreaView>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="About" component={AboutScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </div>
-    );
-  };
+      </Wrapper>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="About" component={AboutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 export default App;
 
 const TasksList = styled.View`
